@@ -58,7 +58,7 @@
                  box-sizing: border-box;
 			}
 			.portfolio-grid {
-				max-width: 960px;
+				max-width: 1000px;
 				margin: 0 auto;
 			}
 			.portfolio-grid:before, .portfolio-grid:after {
@@ -81,7 +81,7 @@
 			.intro {
 				padding-top: 0px;
 				text-align: center;
-				margin-bottom: 30px;
+				margin-bottom: 50px;
 			}
 			.intro > a {
 				padding: 0;
@@ -94,17 +94,16 @@
 				color: #212121;
 				text-transform: uppercase;
 				font-family: "Pathway Gothic One", "Helvetica", "Arial", "Sans-serif";
+				margin-bottom: 10px;
 				letter-spacing: 5px;
-				margin-bottom: 20px;
 				padding: 0;
 				padding-bottom: 10px;
-				margin-bottom: 0px;
 				margin-top: 60px;
 				font-size: 3.3em;
 			}
 			.intro > a.link {
 				text-decoration: none;
-				font-family: "PT sans", "Georgia", "serif";
+				font-family: "Proxima Nova", "Helvetica", "san-serif";
 				color: #bdbdbd;
 				padding-bottom: 10px;
 				font-size: 16px;
@@ -121,9 +120,84 @@
 			}
 			.portfolio-grid > .h-150 {
 				opacity: 0;
-				height: 100px;
+				height: 150px;
 				/*background-color: #f39c12;  Debugging! */
 				border-bottom: 1px solid #fffffa; /* Debugging */
+
+			}
+			.footer{
+				text-align: center;
+				width: 1000px;
+				margin-right: auto;
+				margin-left: auto;
+				text-decoration: none;
+				padding-bottom: 20px;
+				background-color: #fafafa;
+				margin-top: 20px;
+			}
+			.footer h1{
+				text-transform: uppercase;
+				font-family: "Pathway Gothic One", "Helvetica", "Arial", "Sans-serif";
+				font-size: 2em;
+				letter-spacing: 1px;
+				margin-bottom: -10px;
+			}
+
+			.footer .current p{
+				text-transform: uppercase;
+				font-family: "Pathway Gothic One", "Helvetica", "Arial", "Sans-serif";
+				font-size:1.25em;
+				display: inline-block;
+				padding-left: 10px;
+
+			}
+			.footer a{
+				text-transform: uppercase;
+				text-decoration: none;
+				font-family:"Pathway Gothic One", "Helvetica", "Arial", "Sans-serif";
+				font-size:1.7em;
+				color:#cccccc;
+				margin-left: 5px;
+				
+			}
+			.footer img{
+				margin-right: 3px;
+			}
+			.foot_links{
+				margin-top:20px;
+				margin-left:10px;
+			}
+			.foot_links img{
+				margin-right:5px;
+			}
+			.footer a:hover{
+				color:#f39c12;
+			}
+			.reading, .listening, .playing{
+				display: inline-block;
+				margin-bottom: 10px;
+				padding-left: 30px;
+				padding-top:15px;
+				padding-bottom: 15px;
+			}
+			hr{
+				height: 6px;
+				background-color: #282828;
+				border: none;
+				margin-bottom:20px;
+			}
+			.first, .second{
+				display: inline-block;
+				padding: 10px;
+				line-height: 30px;
+
+			}
+			#copyright{
+				margin-bottom: 0px;
+				text-align: center;
+				margin-bottom: -15px;
+				font-size: 12px;
+			}
 			}
 		</style>
 	</head>
@@ -131,11 +205,11 @@
 	<body>
 		<div class="container">
 			<section class="intro">
-				<a class="logo" href="index.html">lisa vuong</a>
+				<a class="logo" href="index.html">Lisa Vuong</a>
 				<a class="link" id="contact" href="mailto:hello.lisavuong@gmail.com">hello.lisavuong@gmail.com</a>
 				<a class="link inline-link" id="resume" href="lisavuong_resume.pdf" target="_blank">resume</a>
 				//
-				<a class="link inline-link" id="blog" href="http://since94.com" target="_blank">blog</a>
+				<a class="link inline-link" id="blog" href="http://since94.com" target="_blank">linkedin</a>
 
 			</section>
 			<section class="navigation"><nav></nav></section>
@@ -158,7 +232,50 @@
 				<div class="portfolio-item h-150">
 					
 				</div>
+				<div class="portfolio-item h-150">
+					
+				</div>
+				<div class="portfolio-item h-150">
+					
+				</div>
+				<div class="portfolio-item h-150">
+					
+				</div>
+				<div class="portfolio-item h-150">
+					
+				</div>
 			</section>
+
+			<div class="footer">
+			<hr>
+			<div class="current">
+			<h1>I am currently</h1>
+				<p>
+				<div class="reading">
+					<p><img src="images/book.jpg" height="20px" alt="book">Reading </p><a href="http://www.goodreads.com/book/show/7665458-richard-yates" target="_blank">Richard Yates</a>
+				</div>
+				<div class="listening">
+					<p><img src="images/headphones.jpg" height="20px" alt="headphones">Listening to </p><a href="http://www.radiolab.org" target="_blank">RadioLab</a>
+				</div>
+				<div class="playing">
+					<p><img src="images/control.jpg" height="15px" alt="control">Playing </p><a href="http://www.stanleyparable.com/" target="_blank">The Stanley Parable</a>
+				</div>	
+			</div>
+			<h1>i'd love to meet you</h1>
+			<div class="foot_links">
+				<div class="first">
+					<a href="http://www.rdio.com/people/LisaVuong94/" target="_blank"><img src="images/rdio.svg" height="25px" alt="rdio"> The Soundtrack to my Life</a>
+					<p>
+					<a href="http://www.linkedin.com/profile/view?id=181368150&trk=nav_responsive_tab_profile_pic" target="_blank"><img src="images/linkedin.svg" height="25px" alt="linkedin">My Late Night Tweets</a>
+				</div>
+				<div class="second">
+					<a href="http://www.instagram.com/lisaavuong" target="_blank"><img src="images/instagram.jpg" height="24px" alt="instagram">Amateur iPhoneography</a>
+					<p>
+					<a href="mailto:hello.lisavuong@gmail.com"><img src="images/mail.png" height="30px" alt="mail">Don't worry, I don't bite </a>
+				</div>
+				<p id="copyright">&copy; 2014 Lisa Vuong</p>
+			</div>
+		</div>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 		<script src="http://cdn.jsdelivr.net/jquery.velocity/0.1.0/jquery.velocity.min.js"></script>
