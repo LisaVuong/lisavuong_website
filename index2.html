@@ -13,32 +13,15 @@
 		<meta name="description" content="Lisa Vuong Portfolio">
 		<meta name="keywords" content="Lisa, Vuong, Portfolio, Design">
 
-		<link rel="stylesheet" href="css/styles.css">
-		<link rel="stylesheet" href="css/flexslider.css">
-
+		<!--link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="css/flexslider.css"-->
 		<link href='http://fonts.googleapis.com/css?family=Pathway+Gothic+One' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Radley' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
 
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-		<script src="js/jquery.flexslider.js"></script>
-		<script type="text/javascript">
-			jQuery(document).ready(function() {
-			  jQuery(".content").hide();
-			  //toggle the componenet with class msg_body
-			  jQuery(".heading").click(function()
-			  {
-			    jQuery(this).next(".content").slideToggle(500);
-			  });
-			});
-		</script>
-		<script type="text/javascript" charset="utf-8">
- 			$(window).load(function() {
-    			$('.flexslider').flexslider();
-  		});
-		</script>
+		<link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/jquery.slick/1.3.11/slick.css"/>
+
 		<script>
 			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -49,170 +32,702 @@
 			  ga('send', 'pageview');
 
 		</script>
+		<style>
+			/* New styles, front and center */
+			* {
+			    margin: 0;
+			    padding: 0;    
+			    -webkit-font-smoothing: antialiased;
+			    -webkit-box-sizing: border-box;
+	            -moz-box-sizing: border-box;
+                 box-sizing: border-box;
+			}
+			.portfolio-grid {
+				max-width: 960px;
+				margin: 0 auto;
+			}
+			.portfolio-grid:before, .portfolio-grid:after {
+			    content: "";
+			    display: table;
+			    clear: both;
+			}
+			.portfolio-item {
+				/* Always left aligned, so the grid messes up less.
+				 * float: left; 
+				 * display: inline-block; /* Let's have the render on the same level! 
+				 * Don't need these two right now, but will if we make smaller grid units
+				 */
+				display: block;
+			}
+			.portfolio-item {
+				width: 100%;
+			}
+			.portfolio-item > .item-image {
+
+			}
+			.portfolio-item > .fold-content {
+				font-family: "PT sans", "Georgia", "serif";
+				color: #333;
+				padding: 20px;
+				font-size: 16px;
+				line-height: 1.6;
+				opacity: 1;
+				display: none;
+			}
+
+			.fold-content > .spec-container {
+				width: inherit;
+			}
+
+			.spec-container > .specs {
+				width: 32%;
+				border-left: 1px solid #999; /*1px solid #999; or 2px solid rgba(243, 156, 18, 0.5) ?*/
+				display: inline-block;
+				color: #666;
+				padding-left: 10px;
+				font-size: 16px;
+				vertical-align: top;
+			}
+			.specs > .keyword {
+				text-transform: uppercase;
+				color: #666;
+				font-size: 14px;
+				display: block;
+				padding-bottom: 5px;
+				font-weight: bold;
+			}
+
+			.fold-content > .slider {
+				margin-top: 20px;
+				width: 100%;
+			}
+
+			.banner { position: relative; overflow: auto; }
+    		.banner li { list-style: none; }
+        	.banner ul li { float: left; }
+
+			.slider ul > li {
+				padding-top: 20px;
+				width: 100%;
+				height: auto;
+				background-color: #999;
+			}
+			.slider ul > li:before {
+				padding-top: 56.25%;
+				content: "";
+				display: block;
+			}
+			.slider ul > li > * {
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+
+			.fold-content > .description {
+				padding-top: 20px;
+			}
+			.intro {
+				padding-top: 0px;
+				text-align: center;
+				margin-bottom: 30px;
+			}
+			.intro > a {
+				padding: 0;
+				display: block;
+				padding-bottom: 10px;
+				padding-top: 0;
+			}
+			.intro > a.logo {
+				text-decoration: none;
+				color: #212121;
+				text-transform: uppercase;
+				font-family: "Pathway Gothic One", "Helvetica", "Arial", "Sans-serif";
+				letter-spacing: 5px;
+				margin-bottom: 20px;
+				padding: 0;
+				padding-bottom: 10px;
+				margin-bottom: 0px;
+				margin-top: 60px;
+				font-size: 3.3em;
+			}
+			.intro > a.link {
+				text-decoration: none;
+				font-family: "PT sans", "Georgia", "serif";
+				color: #bdbdbd;
+				padding-bottom: 10px;
+				font-size: 16px;
+				letter-spacing: 2px;
+			}
+			.intro > a.link:hover {
+				color: #f39c12;
+			}
+			.intro > .inline-link {
+				display: inline-block;
+				padding-bottom: 0px;
+				padding: 10px;
+				padding-top: 0px; 
+			}
+			.h-150 {
+				opacity: 0; /* important for the fade-in */ 
+				height: 150px;
+				/*background-color: #f39c12;  Debugging! */
+				border-bottom: 1px solid #fffffa; /* Debugging */
+			}
+
+			.footer{
+				text-align: center;
+				width: 1000px;
+				margin-right: auto;
+				margin-left: auto;
+				text-decoration: none;
+				padding-bottom: 20px;
+				background-color: #fafafa;
+				margin-top: 20px;
+			}
+			.footer h1{
+				text-transform: uppercase;
+				font-family: "Pathway Gothic One", "Helvetica", "Arial", "Sans-serif";
+				font-size: 2em;
+				letter-spacing: 1px;
+				margin-bottom: -10px;
+			}
+
+			.footer .current p{
+				text-transform: uppercase;
+				font-family: "Pathway Gothic One", "Helvetica", "Arial", "Sans-serif";
+				font-size:1.25em;
+				display: inline-block;
+				padding-left: 10px;
+
+			}
+			.footer a{
+				text-transform: uppercase;
+				text-decoration: none;
+				font-family:"Pathway Gothic One", "Helvetica", "Arial", "Sans-serif";
+				font-size:1.7em;
+				color:#cccccc;
+				margin-left: 5px;
+				
+			}
+			.footer img{
+				margin-right: 3px;
+			}
+			.foot_links{
+				margin-top:20px;
+				margin-left:10px;
+			}
+			.foot_links img{
+				margin-right:5px;
+			}
+			.footer a:hover{
+				color:#f39c12;
+			}
+			.reading, .listening, .playing{
+				display: inline-block;
+				margin-bottom: 10px;
+				padding-left: 30px;
+				padding-top:15px;
+				padding-bottom: 15px;
+			}
+			hr{
+				height: 6px;
+				background-color: #282828;
+				border: none;
+				margin-bottom:20px;
+			}
+			.first, .second{
+				display: inline-block;
+				padding: 10px;
+				line-height: 30px;
+
+			}
+			#copyright{
+				margin-bottom: 0px;
+				text-align: center;
+				margin-bottom: -15px;
+				font-size: 12px;
+			}
+
+			@media only screen  
+			and (max-width: 600px) {
+				
+				.h-150 {
+					height: 100px;
+				}
+				.fold-content > .specs {
+					font-size: 14px;
+				}
+			}
+
+			/* slider */
+			.slick-prev {
+				left: 10px;
+			} 
+			.slick-next {
+				right: 10px;
+			}
+			.slider div.slide {
+				width: 100%;
+				max-width: 100%;
+				background-color: #4192f4;
+			}
+
+			.slider div.slide:before {
+				content: "";
+				display: block;
+				margin-top: 56.25%;
+			}
+			.slide .slide-content {
+				overflow: hidden;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			.slide-content img {
+				width: 100%;
+				height: auto;
+			}
+
+		</style>
 	</head>
+
 	<body>
 		<div class="container">
-		<div class="intro">
-			<a class="logo" href="index.html">lisa vuong</a>
-			<p>
-			<p>
-			<a class="links" id="contact" href="mailto:hello.lisavuong@gmail.com">hello.lisavuong@gmail.com</a>
-			<p>
-			<span><a class="links" id="resume" href="lisavuong_resume.pdf" target="_blank" width="100%">resume</a>//
-			<a class="links" id="blog" href="http://since94.com" target="_blank" width="100%">blog</a></span>
+			<section class="intro">
+				<a class="logo" href="index.html">lisa vuong</a>
+				<a class="link" id="contact" href="mailto:hello.lisavuong@gmail.com">hello.lisavuong@gmail.com</a>
+				<a class="link inline-link" id="resume" href="lisavuong_resume.pdf" target="_blank">resume</a>
+				//
+				<a class="link inline-link" id="blog" href="http://since94.com" target="_blank">blog</a>
 
-		
-		</div>	
-		<div id="work">
-			<div class="layer1">
-				<div class="heading"><a><img src="images/hello_1000_150.jpg" onMouseOver="this.src='images/hello_col_1000_150.jpg'" onMouseOut="this.src='images/hello_1000_150.jpg'"></a></div>
-				<div class="content"><p>Hello, my name is Lisa and I want to craft beautiful experiences of all sorts for people of all sorts. While I love the vast variety of work within the design field, I am especially passionate about visual design, interaction design, data visualization, and front-end development.
-				<p>
-				I am currently pursuing a bachelor of fine arts in Graphic Design, with a Computer Science and Informatics double minor at the University of Illinois at Urbana-Champaign.</p></div> 
-				<div class="heading" id="prvoice"><a><img src="images/projectvoice_150.jpg" height="150px" width="1000px" alt="projectvoice" onMouseOver="this.src='images/projectvoice_col_150.jpg'" onMouseOut="this.src='images/projectvoice_150.jpg'"></a></div>
-					<div class="content">
-						<p>Kids are typically turned off by poetry due to the belief that it is boring and difficult to understand. Project Voice is an organization whose goal is to help change that misconception and empower youth through poetry. This is a concept for an iPad app which represents the exploration that exists in their work and documents the work from Project Voice.
-						<p>
-						<a href="http://www.projectvoice.com" target="_blank">Learn more about Project Voice</a></p> 
-							<div class="flexslider">
-							  <ul class="slides">
-							    <li><img src="images/projectvoice_img1.jpg" /></li>
-							    <li><img src="images/projectvoice_img2.jpg" /></li>
-							    <li><img src="images/projectvoice_img3.jpg" /></li>
-							  </ul>
+			</section>
+			<section class="navigation"><nav></nav></section>
+			<section class="portfolio-grid">
+				<div class="portfolio-item">
+					<div class="item-image h-150"></div>
+					<div class="fold-content">
+						<div class="spec-container">
+							<div class="specs">
+								<span class="keyword">Role</span>
+								Wittle Lisa
 							</div>
-					</div>
-				<div class="heading" id="fuse"><a><img src="images/fuse_1000_150.jpg" height="150px" width="1000px" alt="fuse" onMouseOver="this.src='images/fuse_col_1000_150.jpg'" onMouseOut="this.src='images/fuse_1000_150.jpg'"></a></div>
-					<div class="content">
-						<p>Fuse is a mass photosharing phone application. You can create an album, add your friends to the album and everyone in the group will have access to pictures taken by anyone in the group. You therefore never have to send or wait to be sent photos.</p> 
-						<p class="develop">I designed the application, and it is currenly being developed by <a href="http://www.linkedin.com/profile/view?id=136788572&locale=en_US&trk=tyah2&trkInfo=tas%3Ajason%20su%2Cidx%3A2-2-3" target="_blank">Jason Su</a>. Coming to the Google Play store soon.</p>
-						<div class="flexslider">
-							<ul class="slides">
-							 	<li><img src="images/fuse_img1.jpg" ></li>
-							    <li><img src="images/fuse_img2.jpg" /></li>
-							    <li><img src="images/fuse_img3.jpg" /></li>
-							    <li><img src="images/fuse_img4.jpg" /></li>
-							</ul>
-						</div>
-					</div>
-				<div class="heading"><a><img src="images/zombie_1000_150.jpg" height="150px" width="1000px" alt="zombie" onMouseOver="this.src='images/zombie_col_1000_150.jpg'" onMouseOut="this.src='images/zombie_1000_150.jpg'"></a></div>
-					<div class="content">
-						<p>This website is meant to serve as a checklist to help one prepare for a zombie apocalypse. It never hurts to be prepared.</p> 
-						<p class="develop">I designed and developed it using HTML/CSS and Javascript.</p>
-						<p>
-						<a href="http://www.zombiesurvivalguide.lisavuong.com/" target="_blank">See the live site</a>
-						<div class="flexslider">
-							<ul class="slides">
-							    <li><img src="images/zombie_img1.jpg" ></li>
-							    <li><img src="images/zombie_img2.jpg" /></li>
-							</ul>
-						</div>
-					</div>
-				<div class="heading"><a><img src="images/hackill_1000_150.jpg" height="150px" width="1000px" alt="hackillinois" onMouseOver="this.src='images/hackill_col_1000_150.jpg'" onMouseOut="this.src='images/hackill_1000_150.jpg'"></a></div>
-					<div class="content">
-						<p>Designed the logo and prototyped a working webpage in HTML/CSS for Hack Illinois, the first student run hackathon at the University of Illinois at Urbana-Champaign.</p>
-						<p class ="develop">Developed by <a href="http://www.achalv.com" target="_blank">Achal Varma</a>. Mobile application coming soon</p>
-						<p>
-						<a href="http://www.hackillinois.org" target="_blank">See the live site</a>
-						<div class="flexslider">
-							<ul class="slides">
-							    <li><img src="images/hackillinois_img1.jpg" ></li>
-							    <li><img src="images/hackillinois_img2.jpg" ></li>
-							    <li><img src="images/hackillinois_img3.jpg" ></li>
-							</ul>
-						</div>
-					</div>
-				<div class="heading"><a><img src="images/notes_1000_150.jpg" height="150px" width="1000px" alt="notes" onMouseOver="this.src='images/notes_col_1000_150.jpg'" onMouseOut="this.src='images/notes_1000_150.jpg'"></a></div>
-					<div class="content">
-						<p>I found the imagery in Franny Choi's poem "Notes on the Existence of Ghosts" to be really inspirational, so I created a webpage demonstrating my interpertation of it. It is currently featured on her <a href="http://www.frannychoi.com">website</a>.</p>
-						<p class="develop">I designed and developed the site using HTML/CSS, and Javascript</p>
-						<p>
-						<a href="http://www.notesonghosts.lisavuong.com/" target="_blank">See the live site</a>
-						<div class="flexslider">
-							<ul class="slides">
-							    <li><img src="images/notes_img1.jpg" ></li>
-							    <li><img src="images/notes_img2.jpg" /></li>
-							    <li><img src="images/notes_img3.jpg" /></li>
-							</ul>
-						</div>
-					</div>
-				<div class="heading"><a><img src="images/dovana_1000_150.jpg" height="150px" width="1000px" alt="dovana" onMouseOver="this.src='images/dovana_col_1000_150.jpg'" onMouseOut="this.src='images/dovana_1000_150.jpg'"></a></div>
-					<div class="content">
-						<p>I created mockups for Dovana, which is a gifting application. It uses Facebook to keep track of your friends' birthdays, and events. Through viewing their profile, you can see items they would like to be gifted, and what other friends have purchased. You may also pitch in with several friends to purchase a gift</p>
-						<p class="develop">Developed by <a href="http://jatinpandey.com" target="_blank">Jatin Pandey</a>, <a href="http://www.linkedin.com/profile/view?id=82349136&locale=en_US&trk=tyah&trkInfo=tas%3Aki%2Cidx%3A2-1-2" target="_blank">Kiarash Akhlaghi</a>,<a href="http://www.linkedin.com/profile/view?id=221025799&locale=en_US&trk=tyah&trkInfo=tas%3Av%2Cidx%3A2-3-4" target="_blank">Vignesh Vishwanathan</a>. 
-						<p>
-						<a href="https://github.com/LisaVuong?tab=repositories" target="_blank">View on Github</a>
-						<div class="flexslider">
-							<ul class="slides">
-							    <li><img src="images/dovana_img1.jpg" ></li>
-							    <li><img src="images/dovana_img2.jpg" /></li>
-							    <li><img src="images/dovana_img3.jpg" /></li>
-							</ul>
-						</div>
-					</div>
-				<div class="heading"><a><img src="images/raingame_1000_150.jpg" height="150px" width="1000px" alt="game" onMouseOver="this.src='images/raingame_col_1000_150.jpg'" onMouseOut="this.src='images/raingame_1000_150.jpg'"></a></div>
-					<div class="content">
-						<p>Rain Game is a game where you have to type the numbers before they reach the end of the screen. As levels progress, space invaders appear to block your vision. </p>
-						<p class="develop">I designed and developed this game in Java with <a href="http://www.linkedin.com/profile/view?id=233726739&locale=en_US&trk=tyah&trkInfo=tas%3Aeth%2Cidx%3A2-1-2" target="_blank">Ethan Chen</a>.</p>
-							<div class="flexslider">
-							<ul class="slides">
-							 	<li><img src="images/rain_img1.jpg" ></li>
-							    <li><img src="images/rain_img2.jpg" /></li>
-							    <li><img src="images/rain_img3.jpg" /></li>
-							    <li><img src="images/rain_img4.jpg" /></li>
-							    <li><img src="images/rain_img5.jpg" /></li>
-							</ul>
+							<div class="specs">
+								<span class="keyword">Using</span>
+								Chopsticks<br>
+								Proxima Nova
+							</div>
+							<div class="specs">
+								<span class="keyword">For</span>
+								Mochi<br>
+								Hotpot
+							</div>
 						</div>
 
-					</div>
-				<div class="heading"><a><img src="images/plastic_1000_150.jpg" height="150px" width="1000px" alt="plastic" onMouseOver="this.src='images/plastic_col_1000_150.jpg'" onMouseOut="this.src='images/plastic_1000_150.jpg'"></a></div>
-					<div class="content">
-						<p>I created an infographic and slides about the dangers of plastic pollution. QR codes leading to the infographic were printed on fish stickers and placed around campus.</p>
-						<p>
-						<a href="http://plasticpollution.lisavuong.com" target="_blank">View full infographic</a>
-						<div class="flexslider">
-							<ul class="slides">
-							 	<li><img src="images/plastic_img1.jpg" ></li>
-							    <li><img src="images/plastic_img2.jpg" /></li>
-							    <li><img src="images/plastic_img3.jpg" /></li>
-							    <li><img src="images/plastic_img4.jpg" /></li>
-							    <li><img src="images/plastic_img5.jpg" /></li>
-							    <li><img src="images/plastic_img6.jpg" /></li>
-							    <li><img src="images/plastic_img7.jpg" /></li>
-							</ul>
+						<div class="slider">
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-1-scontent-b.xx.fbcdn.net/hphotos-xpa1/t31.0-8/10012702_10152431047468453_7770889695315133876_o.jpg">
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-n.ak.fbcdn.net/sphotos-a.ak/hphotos-ak-xpa1/v/t1.0-9/487450_10151572795273453_1278815817_n.jpg?oh=cacca5493fef722b76c713ebaa6ad8de&oe=54EE788E&__gda__=1421460821_a39b97af1cb02573efd78ee385644ef2">
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-1-scontent-b.xx.fbcdn.net/hphotos-xap1/t31.0-8/178240_10151339746438453_898832490_o.jpg">
+								</div>
+							</div>
 						</div>
 
-					</div>
-				<div class="heading"><a><img src="images/games_1000_150.jpg" height="150px" width="1000px" alt="games" onMouseOver="this.src='images/games_col_1000_150.jpg'" onMouseOut="this.src='images/games_1000_150.jpg'"></a></div>
-					<div class="content">
-						<p>An infographic about how the sexism that exist in videogames create a toxic environment in which sexual harrassment towards girls is the norm.</p>
-						<p>
-						<a href="http://www.gamesmadebymen.lisavuong.com" target="_blank">View full infographic</a>
-						<div class="flexslider">
-							<ul class="slides">
-							 	<li><img src="images/game_img1.jpg" ></li>
-							    <li><img src="images/game_img2.jpg" /></li>
-							    <li><img src="images/game_img3.jpg" /></li>
-							    <li><img src="images/game_img4.jpg" /></li>
-							</ul>
+						<div class="description">
+							Farm-to-table cardigan distillery, American Apparel Brooklyn Marfa lomo hella. Four loko art party hoodie, try-hard cred plaid irony distillery fap American Apparel artisan tousled direct trade Odd Future. Bicycle rights 8-bit asymmetrical lo-fi small batch. Kitsch bitters wayfarers, heirloom McSweeney's Vice drinking vinegar Shoreditch. Letterpress cornhole Odd Future Wes Anderson pop-up. Bushwick Tumblr church-key, food truck hoodie Brooklyn chambray kale chips cardigan fixie gentrify lo-fi Blue Bottle. Bushwick tousled artisan street art sriracha gluten-free Tonx meggings, chillwave vegan heirloom skateboard.
 						</div>
 					</div>
-				<div class="heading"><a><img src="images/meadowbrook_1000_150.jpg" height="150px" width="1000px" alt="meadowbrook" onMouseOver="this.src='images/meadowbrook_col_1000_150.jpg'" onMouseOut="this.src='images/meadowbrook_1000_150.jpg'"></a></div>
-					<div class="content">
-						<p>Designed the logo, custom patterned wrapping paper, and gift box for a soap kit. The gift item was to be based on a critter in the park; I chose the bee. Bees release a pheromone to call to other bees when they are stressed. In order to reflect this behavior, I chose to create a soap kit, which relaxes one through scents (which are made with bee products).</p>
-						<div class="flexslider">
-							<ul class="slides">
-							    <li><img src="images/meadowbrook_img1.jpg" ></li>
-							    <li><img src="images/meadowbrook_img2.jpg" /></li>
-							    <li><img src="images/meadowbrook_img3.jpg" /></li>
-							</ul>
+				</div>
+
+				<div class="portfolio-item">
+					<div class="item-image h-150"></div>
+					<div class="fold-content">
+						<div class="spec-container">
+							<div class="specs">
+								<span class="keyword">Role</span>
+								Wittle Lisa
+							</div>
+							<div class="specs">
+								<span class="keyword">Using</span>
+								Chopsticks<br>
+								Proxima Nova
+							</div>
+							<div class="specs">
+								<span class="keyword">For</span>
+								Mochi<br>
+								Hotpot
+							</div>
+						</div>
+
+						<div class="slider">
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-1-scontent-b.xx.fbcdn.net/hphotos-xpa1/t31.0-8/10012702_10152431047468453_7770889695315133876_o.jpg">
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-n.ak.fbcdn.net/sphotos-a.ak/hphotos-ak-xpa1/v/t1.0-9/487450_10151572795273453_1278815817_n.jpg?oh=cacca5493fef722b76c713ebaa6ad8de&oe=54EE788E&__gda__=1421460821_a39b97af1cb02573efd78ee385644ef2">
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-1-scontent-b.xx.fbcdn.net/hphotos-xap1/t31.0-8/178240_10151339746438453_898832490_o.jpg">
+								</div>
+							</div>
+						</div>
+
+						<div class="description">
+							Farm-to-table cardigan distillery, American Apparel Brooklyn Marfa lomo hella. Four loko art party hoodie, try-hard cred plaid irony distillery fap American Apparel artisan tousled direct trade Odd Future. Bicycle rights 8-bit asymmetrical lo-fi small batch. Kitsch bitters wayfarers, heirloom McSweeney's Vice drinking vinegar Shoreditch. Letterpress cornhole Odd Future Wes Anderson pop-up. Bushwick Tumblr church-key, food truck hoodie Brooklyn chambray kale chips cardigan fixie gentrify lo-fi Blue Bottle. Bushwick tousled artisan street art sriracha gluten-free Tonx meggings, chillwave vegan heirloom skateboard.
 						</div>
 					</div>
-				<!--<div class="heading"><img src="wonderland_1000_150.jpg" height="150px" width="1000px" alt="wonderland"></div>
-					<div class="content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit orem ipsum dolor sit amet, consectetuer adipiscing elit</div>-->
-			</div>
+				</div>
+
+				<div class="portfolio-item">
+					<div class="item-image h-150"></div>
+					<div class="fold-content">
+						<div class="spec-container">
+							<div class="specs">
+								<span class="keyword">Role</span>
+								Wittle Lisa
+							</div>
+							<div class="specs">
+								<span class="keyword">Using</span>
+								Chopsticks<br>
+								Proxima Nova
+							</div>
+							<div class="specs">
+								<span class="keyword">For</span>
+								Mochi<br>
+								Hotpot
+							</div>
+						</div>
+
+						<div class="slider">
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-1-scontent-b.xx.fbcdn.net/hphotos-xpa1/t31.0-8/10012702_10152431047468453_7770889695315133876_o.jpg">
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-n.ak.fbcdn.net/sphotos-a.ak/hphotos-ak-xpa1/v/t1.0-9/487450_10151572795273453_1278815817_n.jpg?oh=cacca5493fef722b76c713ebaa6ad8de&oe=54EE788E&__gda__=1421460821_a39b97af1cb02573efd78ee385644ef2">
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-1-scontent-b.xx.fbcdn.net/hphotos-xap1/t31.0-8/178240_10151339746438453_898832490_o.jpg">
+								</div>
+							</div>
+						</div>
+
+						<div class="description">
+							Farm-to-table cardigan distillery, American Apparel Brooklyn Marfa lomo hella. Four loko art party hoodie, try-hard cred plaid irony distillery fap American Apparel artisan tousled direct trade Odd Future. Bicycle rights 8-bit asymmetrical lo-fi small batch. Kitsch bitters wayfarers, heirloom McSweeney's Vice drinking vinegar Shoreditch. Letterpress cornhole Odd Future Wes Anderson pop-up. Bushwick Tumblr church-key, food truck hoodie Brooklyn chambray kale chips cardigan fixie gentrify lo-fi Blue Bottle. Bushwick tousled artisan street art sriracha gluten-free Tonx meggings, chillwave vegan heirloom skateboard.
+						</div>
+					</div>
+				</div>
+
+				<div class="portfolio-item">
+					<div class="item-image h-150"></div>
+					<div class="fold-content">
+						<div class="spec-container">
+							<div class="specs">
+								<span class="keyword">Role</span>
+								Wittle Lisa
+							</div>
+							<div class="specs">
+								<span class="keyword">Using</span>
+								Chopsticks<br>
+								Proxima Nova
+							</div>
+							<div class="specs">
+								<span class="keyword">For</span>
+								Mochi<br>
+								Hotpot
+							</div>
+						</div>
+
+						<div class="slider">
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-1-scontent-b.xx.fbcdn.net/hphotos-xpa1/t31.0-8/10012702_10152431047468453_7770889695315133876_o.jpg">
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-n.ak.fbcdn.net/sphotos-a.ak/hphotos-ak-xpa1/v/t1.0-9/487450_10151572795273453_1278815817_n.jpg?oh=cacca5493fef722b76c713ebaa6ad8de&oe=54EE788E&__gda__=1421460821_a39b97af1cb02573efd78ee385644ef2">
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-1-scontent-b.xx.fbcdn.net/hphotos-xap1/t31.0-8/178240_10151339746438453_898832490_o.jpg">
+								</div>
+							</div>
+						</div>
+
+						<div class="description">
+							Farm-to-table cardigan distillery, American Apparel Brooklyn Marfa lomo hella. Four loko art party hoodie, try-hard cred plaid irony distillery fap American Apparel artisan tousled direct trade Odd Future. Bicycle rights 8-bit asymmetrical lo-fi small batch. Kitsch bitters wayfarers, heirloom McSweeney's Vice drinking vinegar Shoreditch. Letterpress cornhole Odd Future Wes Anderson pop-up. Bushwick Tumblr church-key, food truck hoodie Brooklyn chambray kale chips cardigan fixie gentrify lo-fi Blue Bottle. Bushwick tousled artisan street art sriracha gluten-free Tonx meggings, chillwave vegan heirloom skateboard.
+						</div>
+					</div>
+				</div>
+
+				<div class="portfolio-item">
+					<div class="item-image h-150"></div>
+					<div class="fold-content">
+						<div class="spec-container">
+							<div class="specs">
+								<span class="keyword">Role</span>
+								Wittle Lisa
+							</div>
+							<div class="specs">
+								<span class="keyword">Using</span>
+								Chopsticks<br>
+								Proxima Nova
+							</div>
+							<div class="specs">
+								<span class="keyword">For</span>
+								Mochi<br>
+								Hotpot
+							</div>
+						</div>
+
+						<div class="slider">
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-1-scontent-b.xx.fbcdn.net/hphotos-xpa1/t31.0-8/10012702_10152431047468453_7770889695315133876_o.jpg">
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-n.ak.fbcdn.net/sphotos-a.ak/hphotos-ak-xpa1/v/t1.0-9/487450_10151572795273453_1278815817_n.jpg?oh=cacca5493fef722b76c713ebaa6ad8de&oe=54EE788E&__gda__=1421460821_a39b97af1cb02573efd78ee385644ef2">
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-1-scontent-b.xx.fbcdn.net/hphotos-xap1/t31.0-8/178240_10151339746438453_898832490_o.jpg">
+								</div>
+							</div>
+						</div>
+
+						<div class="description">
+							Farm-to-table cardigan distillery, American Apparel Brooklyn Marfa lomo hella. Four loko art party hoodie, try-hard cred plaid irony distillery fap American Apparel artisan tousled direct trade Odd Future. Bicycle rights 8-bit asymmetrical lo-fi small batch. Kitsch bitters wayfarers, heirloom McSweeney's Vice drinking vinegar Shoreditch. Letterpress cornhole Odd Future Wes Anderson pop-up. Bushwick Tumblr church-key, food truck hoodie Brooklyn chambray kale chips cardigan fixie gentrify lo-fi Blue Bottle. Bushwick tousled artisan street art sriracha gluten-free Tonx meggings, chillwave vegan heirloom skateboard.
+						</div>
+					</div>
+				</div>
+
+				<div class="portfolio-item">
+					<div class="item-image h-150"></div>
+					<div class="fold-content">
+						<div class="spec-container">
+							<div class="specs">
+								<span class="keyword">Role</span>
+								Wittle Lisa
+							</div>
+							<div class="specs">
+								<span class="keyword">Using</span>
+								Chopsticks<br>
+								Proxima Nova
+							</div>
+							<div class="specs">
+								<span class="keyword">For</span>
+								Mochi<br>
+								Hotpot
+							</div>
+						</div>
+
+						<div class="slider">
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-1-scontent-b.xx.fbcdn.net/hphotos-xpa1/t31.0-8/10012702_10152431047468453_7770889695315133876_o.jpg">
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-n.ak.fbcdn.net/sphotos-a.ak/hphotos-ak-xpa1/v/t1.0-9/487450_10151572795273453_1278815817_n.jpg?oh=cacca5493fef722b76c713ebaa6ad8de&oe=54EE788E&__gda__=1421460821_a39b97af1cb02573efd78ee385644ef2">
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-1-scontent-b.xx.fbcdn.net/hphotos-xap1/t31.0-8/178240_10151339746438453_898832490_o.jpg">
+								</div>
+							</div>
+						</div>
+
+						<div class="description">
+							Farm-to-table cardigan distillery, American Apparel Brooklyn Marfa lomo hella. Four loko art party hoodie, try-hard cred plaid irony distillery fap American Apparel artisan tousled direct trade Odd Future. Bicycle rights 8-bit asymmetrical lo-fi small batch. Kitsch bitters wayfarers, heirloom McSweeney's Vice drinking vinegar Shoreditch. Letterpress cornhole Odd Future Wes Anderson pop-up. Bushwick Tumblr church-key, food truck hoodie Brooklyn chambray kale chips cardigan fixie gentrify lo-fi Blue Bottle. Bushwick tousled artisan street art sriracha gluten-free Tonx meggings, chillwave vegan heirloom skateboard.
+						</div>
+					</div>
+				</div>
+
+				<div class="portfolio-item">
+					<div class="item-image h-150"></div>
+					<div class="fold-content">
+						<div class="spec-container">
+							<div class="specs">
+								<span class="keyword">Role</span>
+								Wittle Lisa
+							</div>
+							<div class="specs">
+								<span class="keyword">Using</span>
+								Chopsticks<br>
+								Proxima Nova
+							</div>
+							<div class="specs">
+								<span class="keyword">For</span>
+								Mochi<br>
+								Hotpot
+							</div>
+						</div>
+
+						<div class="slider">
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-1-scontent-b.xx.fbcdn.net/hphotos-xpa1/t31.0-8/10012702_10152431047468453_7770889695315133876_o.jpg">
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-n.ak.fbcdn.net/sphotos-a.ak/hphotos-ak-xpa1/v/t1.0-9/487450_10151572795273453_1278815817_n.jpg?oh=cacca5493fef722b76c713ebaa6ad8de&oe=54EE788E&__gda__=1421460821_a39b97af1cb02573efd78ee385644ef2">
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-1-scontent-b.xx.fbcdn.net/hphotos-xap1/t31.0-8/178240_10151339746438453_898832490_o.jpg">
+								</div>
+							</div>
+						</div>
+
+						<div class="description">
+							Farm-to-table cardigan distillery, American Apparel Brooklyn Marfa lomo hella. Four loko art party hoodie, try-hard cred plaid irony distillery fap American Apparel artisan tousled direct trade Odd Future. Bicycle rights 8-bit asymmetrical lo-fi small batch. Kitsch bitters wayfarers, heirloom McSweeney's Vice drinking vinegar Shoreditch. Letterpress cornhole Odd Future Wes Anderson pop-up. Bushwick Tumblr church-key, food truck hoodie Brooklyn chambray kale chips cardigan fixie gentrify lo-fi Blue Bottle. Bushwick tousled artisan street art sriracha gluten-free Tonx meggings, chillwave vegan heirloom skateboard.
+						</div>
+					</div>
+				</div>
+
+				<div class="portfolio-item">
+					<div class="item-image h-150"></div>
+					<div class="fold-content">
+						<div class="spec-container">
+							<div class="specs">
+								<span class="keyword">Role</span>
+								Wittle Lisa
+							</div>
+							<div class="specs">
+								<span class="keyword">Using</span>
+								Chopsticks<br>
+								Proxima Nova
+							</div>
+							<div class="specs">
+								<span class="keyword">For</span>
+								Mochi<br>
+								Hotpot
+							</div>
+						</div>
+
+						<div class="slider">
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-1-scontent-b.xx.fbcdn.net/hphotos-xpa1/t31.0-8/10012702_10152431047468453_7770889695315133876_o.jpg">
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-n.ak.fbcdn.net/sphotos-a.ak/hphotos-ak-xpa1/v/t1.0-9/487450_10151572795273453_1278815817_n.jpg?oh=cacca5493fef722b76c713ebaa6ad8de&oe=54EE788E&__gda__=1421460821_a39b97af1cb02573efd78ee385644ef2">
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-1-scontent-b.xx.fbcdn.net/hphotos-xap1/t31.0-8/178240_10151339746438453_898832490_o.jpg">
+								</div>
+							</div>
+						</div>
+
+						<div class="description">
+							Farm-to-table cardigan distillery, American Apparel Brooklyn Marfa lomo hella. Four loko art party hoodie, try-hard cred plaid irony distillery fap American Apparel artisan tousled direct trade Odd Future. Bicycle rights 8-bit asymmetrical lo-fi small batch. Kitsch bitters wayfarers, heirloom McSweeney's Vice drinking vinegar Shoreditch. Letterpress cornhole Odd Future Wes Anderson pop-up. Bushwick Tumblr church-key, food truck hoodie Brooklyn chambray kale chips cardigan fixie gentrify lo-fi Blue Bottle. Bushwick tousled artisan street art sriracha gluten-free Tonx meggings, chillwave vegan heirloom skateboard.
+						</div>
+					</div>
+				</div>
+
+				<div class="portfolio-item">
+					<div class="item-image h-150"></div>
+					<div class="fold-content">
+						<div class="spec-container">
+							<div class="specs">
+								<span class="keyword">Role</span>
+								Wittle Lisa
+							</div>
+							<div class="specs">
+								<span class="keyword">Using</span>
+								Chopsticks<br>
+								Proxima Nova
+							</div>
+							<div class="specs">
+								<span class="keyword">For</span>
+								Mochi<br>
+								Hotpot
+							</div>
+						</div>
+
+						<div class="slider">
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-1-scontent-b.xx.fbcdn.net/hphotos-xpa1/t31.0-8/10012702_10152431047468453_7770889695315133876_o.jpg">
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-n.ak.fbcdn.net/sphotos-a.ak/hphotos-ak-xpa1/v/t1.0-9/487450_10151572795273453_1278815817_n.jpg?oh=cacca5493fef722b76c713ebaa6ad8de&oe=54EE788E&__gda__=1421460821_a39b97af1cb02573efd78ee385644ef2">
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-1-scontent-b.xx.fbcdn.net/hphotos-xap1/t31.0-8/178240_10151339746438453_898832490_o.jpg">
+								</div>
+							</div>
+						</div>
+
+						<div class="description">
+							Farm-to-table cardigan distillery, American Apparel Brooklyn Marfa lomo hella. Four loko art party hoodie, try-hard cred plaid irony distillery fap American Apparel artisan tousled direct trade Odd Future. Bicycle rights 8-bit asymmetrical lo-fi small batch. Kitsch bitters wayfarers, heirloom McSweeney's Vice drinking vinegar Shoreditch. Letterpress cornhole Odd Future Wes Anderson pop-up. Bushwick Tumblr church-key, food truck hoodie Brooklyn chambray kale chips cardigan fixie gentrify lo-fi Blue Bottle. Bushwick tousled artisan street art sriracha gluten-free Tonx meggings, chillwave vegan heirloom skateboard.
+						</div>
+					</div>
+				</div>
+
+			</section>
 		</div>
-	</div>
 		<div class="footer">
 			<hr>
 			<div class="current">
@@ -233,7 +748,7 @@
 				<div class="first">
 					<a href="http://www.rdio.com/people/LisaVuong94/" target="_blank"><img src="images/rdio.svg" height="25px" alt="rdio"> The Soundtrack to my Life</a>
 					<p>
-					<a href="http://www.linkedin.com/profile/view?id=181368150&trk=nav_responsive_tab_profile_pic" target="_blank"><img src="images/linkedin.svg" height="25px" alt="linkedin">Let's network together</a>
+					<a href="http://www.linkedin.com/profile/view?id=181368150&trk=nav_responsive_tab_profile_pic" target="_blank"><img src="images/linkedin.svg" height="25px" alt="linkedin">My Late Night Tweets</a>
 				</div>
 				<div class="second">
 					<a href="http://www.instagram.com/lisaavuong" target="_blank"><img src="images/instagram.jpg" height="24px" alt="instagram">Amateur iPhoneography</a>
@@ -243,8 +758,57 @@
 				<p id="copyright">&copy; 2014 Lisa Vuong</p>
 			</div>
 		</div>
-			
-		</div>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="http://cdn.jsdelivr.net/jquery.velocity/0.1.0/jquery.velocity.min.js"></script>
+		<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.slick/1.3.11/slick.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				//cache jQueries
+				var _container 		= $('.container');
+				var _portfolioblock	= $('.item-image');
+				var _foldcontent	= $('.fold-content');
+
+				//touch support?
+				document.addEventListener("touchstart", function(){}, true)
+
+				_portfolioblock.each(function () {
+    				var hue = 'rgb(' + (Math.floor((256-199)*Math.random()) + 200) + ',' + (Math.floor((256-199)*Math.random()) + 200) + ',' + (Math.floor((256-199)*Math.random()) + 200) + ')';
+    				$(this).css("background-color", hue);
+				});
+
+			    _container.delay(200).velocity({opacity: 1}, 500, function(){
+			        $(function() {
+			            var num = _portfolioblock.length;
+			            _portfolioblock.each(function(i) {
+			                $(this).delay((i++)*100)
+			                .velocity({opacity: 1}, 250)
+			                .velocity({opacity: 0.6}, 150)
+			            });
+			        });
+			    });
+
+			    _portfolioblock.click(function() {
+			    	if($(this).next().hasClass("unfolded")){
+			    		$(this).next().slideUp();
+			    		$(this).next().removeClass("unfolded");
+			    	}
+			    	else {
+					    _foldcontent.slideUp(300);
+						_foldcontent.removeClass("unfolded");
+					    $(this).next().addClass("unfolded");
+					    $(this).next().slideDown(200);
+					}
+				    return false;
+  				});
+			    
+				$('.slider').slick({
+					infinite: true,
+					speed: 300,
+					slidesToShow: 1,
+					adaptiveHeight: true
+				});
+
+			});
+		</script>
 	</body>
-	</head>
 </html>
