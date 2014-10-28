@@ -8,7 +8,7 @@
          box-sizing: border-box;
 	}
 	.portfolio-grid {
-		max-width: 960px;
+		max-width: 1000px;
 		margin: 0 auto;
 	}
 	.portfolio-grid:before, .portfolio-grid:after {
@@ -340,15 +340,39 @@
 		-moz-transition: all 0.2s ease-in-out;
 		transition: all 0.2s ease-in-out;
 	}
+	.data-img-hackil-15 {
+		background-image: url('../banners/hackillinois2015_banner.png');
+	}
 
 	.data-img-hackil-14 {
 		background-image: url('../banners/hackillinois2014_banner.jpg');
 	}
+	.data-img-vmware {
+		background-image: url('../banners/vmware_banner.png');
+	}
 
-	/*.data-img-vmware {
-		background-image: url('../banners/hackillinois2014_banner.jpg');
-	}*/
+	.data-img-uber {
+		background-image: url('../banners/uber_banner.png');
+	}
 
+	.data-img-zombie {
+		background-image: url('../banners/zombie_banner.jpg');
+	}
+	.data-img-notes {
+		background-image: url('../banners/notes_banner.jpg');
+	}
+	.data-img-naturalselection {
+		background-image: url('../banners/naturalselection_banner.png');
+	}
+	.data-img-games {
+		background-image: url('../banners/games_banner.jpg');
+	}
+	.data-img-plastic {
+		background-image: url('../banners/plastic_banner.jpg');
+	}
+	.data-img-meadowbrook {
+		background-image: url('../banners/meadowbrook_banner.jpg');
+	}
 	.fold-content > .spec-container {
 		width: inherit;
 	}
