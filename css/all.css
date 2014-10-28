@@ -26,6 +26,7 @@
 	}
 	.portfolio-item {
 		width: 100%;
+		padding-bottom: 3px;
 	}
 	.portfolio-item > .item-image {
 		opacity: 0;
@@ -348,9 +349,12 @@
 		background-image: url('../banners/hackillinois2014_banner.jpg');
 	}
 	.data-img-vmware {
-		background-image: url('../banners/vmware_banner.png');
+		background-image: url('../banners/vmware_banner2.png');
 	}
 
+	.data-img-spark{
+		background-image: url('../banners/spark_banner.png');
+	}
 	.data-img-uber {
 		background-image: url('../banners/uber_banner.png');
 	}
