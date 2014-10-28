@@ -28,7 +28,10 @@
 		width: 100%;
 	}
 	.portfolio-item > .item-image {
-
+		opacity: 0;
+	}
+	.portfolio-item > .item-image:hover {
+		opacity: 1;
 	}
 	.portfolio-item > .fold-content {
 		font-family: "PT sans", "Georgia", "serif";
@@ -44,19 +47,19 @@
 		width: inherit;
 	}
 
-	.spec-container > .specs {
-		width: 32%;
+	.specs {
+		width: 24%;
 		border-left: 1px solid #999; /*1px solid #999; or 2px solid rgba(243, 156, 18, 0.5) ?*/
 		display: inline-block;
 		color: #666;
 		padding-left: 10px;
-		font-size: 16px;
+		font-size: 11px;
 		vertical-align: top;
 	}
 	.specs > .keyword {
 		text-transform: uppercase;
 		color: #666;
-		font-size: 14px;
+		font-size: 9px;
 		display: block;
 		padding-bottom: 5px;
 		font-weight: bold;
@@ -75,7 +78,7 @@
 		padding-top: 20px;
 		width: 100%;
 		height: auto;
-		background-color: #999;
+		background-color: #eee;
 	}
 	.slider ul > li:before {
 		padding-top: 56.25%;
@@ -219,8 +222,12 @@
 		.h-150 {
 			height: 100px;
 		}
-		.fold-content > .specs {
+		.specs {
+			width: 32%;
 			font-size: 14px;
+		}
+		.specs-desktop-only {
+			display: none;
 		}
 	}
 
@@ -354,15 +361,6 @@
 		width: inherit;
 	}
 
-	.spec-container > .specs {
-		width: 24%;
-		border-left: 1px solid #999; /*1px solid #999; or 2px solid rgba(243, 156, 18, 0.5) ?*/
-		display: inline-block;
-		color: #666;
-		padding-left: 10px;
-		font-size: 12px;
-		vertical-align: top;
-	}
 	.specs > .keyword {
 		text-transform: uppercase;
 		color: #666;
@@ -371,9 +369,14 @@
 		padding-bottom: 5px;
 		font-weight: bold;
 	}
+	.keyword-with-hackillinois > a {
+		width: 40%;
+	}
 	.specs > a {
 		display: inline-block;
-		width: 40%;
 		text-decoration: none;
-
+		color: #666;
+	}
+	.specs > a:hover {
+		color: #f39c12;
 	}
