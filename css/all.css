@@ -1,0 +1,351 @@
+/* New styles, front and center */
+	* {
+	    margin: 0;
+	    padding: 0;    
+	    -webkit-font-smoothing: antialiased;
+	    -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+         box-sizing: border-box;
+	}
+	.portfolio-grid {
+		max-width: 960px;
+		margin: 0 auto;
+	}
+	.portfolio-grid:before, .portfolio-grid:after {
+	    content: "";
+	    display: table;
+	    clear: both;
+	}
+	.portfolio-item {
+		/* Always left aligned, so the grid messes up less.
+		 * float: left; 
+		 * display: inline-block; /* Let's have the render on the same level! 
+		 * Don't need these two right now, but will if we make smaller grid units
+		 */
+		display: block;
+	}
+	.portfolio-item {
+		width: 100%;
+	}
+	.portfolio-item > .item-image {
+
+	}
+	.portfolio-item > .fold-content {
+		font-family: "PT sans", "Georgia", "serif";
+		color: #333;
+		padding: 20px;
+		font-size: 16px;
+		line-height: 1.6;
+		opacity: 1;
+		display: none;
+	}
+
+	.fold-content > .spec-container {
+		width: inherit;
+	}
+
+	.spec-container > .specs {
+		width: 32%;
+		border-left: 1px solid #999; /*1px solid #999; or 2px solid rgba(243, 156, 18, 0.5) ?*/
+		display: inline-block;
+		color: #666;
+		padding-left: 10px;
+		font-size: 16px;
+		vertical-align: top;
+	}
+	.specs > .keyword {
+		text-transform: uppercase;
+		color: #666;
+		font-size: 14px;
+		display: block;
+		padding-bottom: 5px;
+		font-weight: bold;
+	}
+
+	.fold-content > .slider {
+		margin-top: 20px;
+		width: 100%;
+	}
+
+	.banner { position: relative; overflow: auto; }
+	.banner li { list-style: none; }
+	.banner ul li { float: left; }
+
+	.slider ul > li {
+		padding-top: 20px;
+		width: 100%;
+		height: auto;
+		background-color: #999;
+	}
+	.slider ul > li:before {
+		padding-top: 56.25%;
+		content: "";
+		display: block;
+	}
+	.slider ul > li > * {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.fold-content > .description {
+		padding-top: 20px;
+	}
+	.intro {
+		padding-top: 0px;
+		text-align: center;
+		margin-bottom: 30px;
+	}
+	.intro > a {
+		padding: 0;
+		display: block;
+		padding-bottom: 10px;
+		padding-top: 0;
+	}
+	.intro > a.logo {
+		text-decoration: none;
+		color: #212121;
+		text-transform: uppercase;
+		font-family: "Pathway Gothic One", "Helvetica", "Arial", "Sans-serif";
+		letter-spacing: 5px;
+		margin-bottom: 20px;
+		padding: 0;
+		padding-bottom: 10px;
+		margin-bottom: 0px;
+		margin-top: 60px;
+		font-size: 3.3em;
+	}
+	.intro > a.link {
+		text-decoration: none;
+		font-family: "PT sans", "Georgia", "serif";
+		color: #bdbdbd;
+		padding-bottom: 10px;
+		font-size: 16px;
+		letter-spacing: 2px;
+	}
+	.intro > a.link:hover {
+		color: #f39c12;
+	}
+	.intro > .inline-link {
+		display: inline-block;
+		padding-bottom: 0px;
+		padding: 10px;
+		padding-top: 0px; 
+	}
+	.h-150 {
+		opacity: 0; /* important for the fade-in */ 
+		height: 150px;
+		/*background-color: #f39c12;  Debugging! */
+		border-bottom: 1px solid #fffffa; /* Debugging */
+	}
+
+	.footer{
+		text-align: center;
+		width: 1000px;
+		margin-right: auto;
+		margin-left: auto;
+		text-decoration: none;
+		padding-bottom: 20px;
+		background-color: #fafafa;
+		margin-top: 20px;
+	}
+	.footer h1{
+		text-transform: uppercase;
+		font-family: "Pathway Gothic One", "Helvetica", "Arial", "Sans-serif";
+		font-size: 2em;
+		letter-spacing: 1px;
+		margin-bottom: -10px;
+	}
+
+	.footer .current p{
+		text-transform: uppercase;
+		font-family: "Pathway Gothic One", "Helvetica", "Arial", "Sans-serif";
+		font-size:1.25em;
+		display: inline-block;
+		padding-left: 10px;
+
+	}
+	.footer a{
+		text-transform: uppercase;
+		text-decoration: none;
+		font-family:"Pathway Gothic One", "Helvetica", "Arial", "Sans-serif";
+		font-size:1.7em;
+		color:#cccccc;
+		margin-left: 5px;
+		
+	}
+	.footer img{
+		margin-right: 3px;
+	}
+	.foot_links{
+		margin-top:20px;
+		margin-left:10px;
+	}
+	.foot_links img{
+		margin-right:5px;
+	}
+	.footer a:hover{
+		color:#f39c12;
+	}
+	.reading, .listening, .playing{
+		display: inline-block;
+		margin-bottom: 10px;
+		padding-left: 30px;
+		padding-top:15px;
+		padding-bottom: 15px;
+	}
+	hr{
+		height: 6px;
+		background-color: #282828;
+		border: none;
+		margin-bottom:20px;
+	}
+	.first, .second{
+		display: inline-block;
+		padding: 10px;
+		line-height: 30px;
+
+	}
+	#copyright{
+		margin-bottom: 0px;
+		text-align: center;
+		margin-bottom: -15px;
+		font-size: 12px;
+	}
+
+	@media only screen  
+	and (max-width: 600px) {
+		
+		.h-150 {
+			height: 100px;
+		}
+		.fold-content > .specs {
+			font-size: 14px;
+		}
+	}
+
+	.slider {
+		position: relative;
+		margin: 0 0 10px;
+		overflow: hidden;
+		padding: 40px 0 60px;
+	}
+
+	.slider ul {
+		margin: 0;
+		padding: 0;
+		white-space: nowrap;
+		list-style-type: none;
+	}
+
+	.slider ul li {
+		-webkit-transform: translateZ(0);
+		-moz-transform: translateZ(0);
+		transform: translateZ(0);
+		float: left;
+		display: block;
+		margin: 0;
+		padding: 0;
+	}
+
+	.slider ul li > a,
+	.slider ul li > div {
+		display: block;
+		text-align: center;
+		outline: none;
+	}
+
+	.slider ul li > a img {
+		border: none;
+		display: block;
+		margin: 0 auto;
+		max-width: 75%;
+	}
+
+	.slider nav span {
+/*				position: absolute;
+		top: 50%;
+		width: 50px;
+		height: 100px;
+		background: transparent;
+		color: #fff;
+		font-size: 50px;
+		text-align: center;
+		margin-top: -50px;
+		line-height: 100px;
+		cursor: pointer;
+		font-weight: normal;*/
+
+		position: absolute;
+		top: 50%;
+		border-radius: 50%;
+		padding-top: 7px;
+		padding-left: 4px;
+		width: 50px;
+		height: 50px;
+		background: rgba(255,255,255,0.2);
+		color: #fff;
+		font-size: 25px;
+		text-align: center;
+		margin-top: -35px;
+		line-height: 50px;
+		cursor: pointer;
+		font-weight: normal;
+	}
+	.slider nav span svg {
+		width: 30px;
+		height: 30px;
+	}
+
+	.slider nav span svg path {
+		fill: #fff;
+	}
+
+	.slider nav span:hover {
+		background: rgba(255,255,255,0.4);
+	}
+
+	.slider nav span.cbp-fwnext {
+		right: 10px;
+	}
+
+	.slider nav span.cbp-fwprev {
+		left: 10px;
+		-ms-transform: rotate(-180deg); /* IE 9 */
+		-webkit-transform: rotate(-180deg); /* Chrome, Safari, Opera */
+		transform: rotate(-180deg);
+	}
+
+	.cbp-fwdots {
+		position: absolute;
+		bottom: 0px;
+		white-space: nowrap;
+		text-align: center;
+		width: 100%;
+	}
+
+	.cbp-fwdots span {
+		display: inline-block;
+		width: 10px;
+		height: 10px;
+		background: #ddd;
+		margin: 4px;
+		border-radius: 50%;
+		cursor: pointer;
+	}
+
+	.cbp-fwdots span:hover {
+		background: #999;
+	}
+
+	.cbp-fwdots span.cbp-fwcurrent {
+		background: #999;
+		box-shadow: 0px 0px 0px 1px #999;
+		-webkit-transition: all 0.2s ease-in-out;
+		-moz-transition: all 0.2s ease-in-out;
+		transition: all 0.2s ease-in-out;
+	}
+
+	.data-img-hackil-14 {
+		background-image: url('../banners/hackillinois2014_banner.jpg');
+	}
