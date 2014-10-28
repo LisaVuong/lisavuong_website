@@ -29,6 +29,7 @@
 	}
 	.portfolio-item > .item-image {
 		opacity: 0;
+		background-color: rgba(0,0,0,0.1);
 	}
 	.portfolio-item > .item-image:hover {
 		opacity: 1;
@@ -270,19 +271,6 @@
 	}
 
 	.slider nav span {
-/*				position: absolute;
-		top: 50%;
-		width: 50px;
-		height: 100px;
-		background: transparent;
-		color: #fff;
-		font-size: 50px;
-		text-align: center;
-		margin-top: -50px;
-		line-height: 100px;
-		cursor: pointer;
-		font-weight: normal;*/
-
 		position: absolute;
 		top: 50%;
 		border-radius: 50%;
@@ -356,6 +344,10 @@
 	.data-img-hackil-14 {
 		background-image: url('../banners/hackillinois2014_banner.jpg');
 	}
+
+	/*.data-img-vmware {
+		background-image: url('../banners/hackillinois2014_banner.jpg');
+	}*/
 
 	.fold-content > .spec-container {
 		width: inherit;
