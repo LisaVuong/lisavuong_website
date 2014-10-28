@@ -349,3 +349,31 @@
 	.data-img-hackil-14 {
 		background-image: url('../banners/hackillinois2014_banner.jpg');
 	}
+
+	.fold-content > .spec-container {
+		width: inherit;
+	}
+
+	.spec-container > .specs {
+		width: 24%;
+		border-left: 1px solid #999; /*1px solid #999; or 2px solid rgba(243, 156, 18, 0.5) ?*/
+		display: inline-block;
+		color: #666;
+		padding-left: 10px;
+		font-size: 12px;
+		vertical-align: top;
+	}
+	.specs > .keyword {
+		text-transform: uppercase;
+		color: #666;
+		font-size: 10px;
+		display: block;
+		padding-bottom: 5px;
+		font-weight: bold;
+	}
+	.specs > a {
+		display: inline-block;
+		width: 40%;
+		text-decoration: none;
+
+	}
