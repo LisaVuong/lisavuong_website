@@ -27,6 +27,7 @@
 	.portfolio-item {
 		width: 100%;
 		padding-bottom: 3px;
+		cursor: pointer;
 	}
 	.portfolio-item > .item-image {
 		opacity: 0;
@@ -223,6 +224,11 @@
 		
 		.h-150 {
 			height: 100px;
+			overflow: hidden; 
+		}
+		.h-150 img.banner-img {
+			height: 100%;
+			width: auto;
 		}
 		.specs {
 			width: 32%;
@@ -287,6 +293,7 @@
 		line-height: 50px;
 		cursor: pointer;
 		font-weight: normal;
+		box-shadow: 0 0 0 2px rgba(0,0,0,0.2);
 	}
 	.slider nav span svg {
 		width: 30px;
@@ -294,7 +301,7 @@
 	}
 
 	.slider nav span svg path {
-		fill: #fff;
+		fill: rgba(0,0,0,0.4);
 	}
 
 	.slider nav span:hover {
@@ -399,4 +406,28 @@
 	}
 	.specs > a:hover {
 		color: #f39c12;
+	}
+
+	.b_w {
+		-webkit-filter: grayscale(100%);
+		filter: grayscale(100%);
+		filter: url(#greyscale);
+		filter: gray;
+		-webkit-transform: translateZ(0px);
+		transform: translateZ(0px);
+		transition: 0.5s;
+		-webkit-transition: 0.5s;
+	}
+	.b_w:hover{
+		-webkit-filter: grayscale(0);
+		filter: grayscale(0);
+		filter: none;
+	}
+	.b_w-inactive {
+		-webkit-filter: grayscale(0);
+		filter: grayscale(0);
+		filter: none;
+	}
+	.banner-img {
+		min-width: 100%;
 	}
