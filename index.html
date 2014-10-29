@@ -276,7 +276,12 @@
 						</div>
 						<div id="slider" class="slider">
 							<ul>
-								<li><img src="img/zombdfdfgie_img1.png" alt="img01"/></li>
+								<li><img src="img/spark_img0.png" alt="img01"/></li>
+								<li><img src="img/spark_img1.png" alt="img01"/></li>
+								<li><img src="img/spark_img2.png" alt="img01"/></li>
+								<li><img src="img/spark_img3.png" alt="img01"/></li>
+								<li><img src="img/spark_img4.png" alt="img01"/></li>
+								<li><img src="img/spark_img5.png" alt="img01"/></li>
 							</ul>
 						</div>
 
@@ -335,7 +340,7 @@
 
 					<div class="portfolio-item">
 					<div class="item-image h-150">
-						<img class="b_w banner-img" src="banners/drpocket_banner.png">
+						<img class="b_w banner-img" src="banners/uber_banner.png">
 						<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
 							<filter id="greyscale">
 							<feColorMatrix type="matrix" values="0.3333 0.3333 0.3333 0 0
@@ -569,7 +574,17 @@
 				</div>
 
 				<div class="portfolio-item">
-					<div class="item-image h-150 data-img-games"></div>
+					<div class="item-image h-150">
+						<img class="b_w banner-img" src="banners/games_banner.jpg">
+						<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+							<filter id="greyscale">
+							<feColorMatrix type="matrix" values="0.3333 0.3333 0.3333 0 0
+							0.3333 0.3333 0.3333 0 0
+							0.3333 0.3333 0.3333 0 0
+							0 0 0 1 0" />
+							</filter>
+						</svg>
+					</div>
 					<div class="fold-content">
 						<div class="spec-container">
 							<div class="specs">
@@ -714,38 +729,39 @@
 					resizeBanners();
 				});
 
-			    _portfolioblock.delay(100).velocity({opacity: 1}, 500, function(){
-			        // $(function() {
-			        //     var num = _bannerimg.length;
-			        //     _bannerimg.each(function(i) {
-			        //         $(this).delay((i++)*100)
-			        //         .velocity({opacity: 1}, 150)
-			        //         .velocity({opacity: 0.2}, 250)
-			        //         .velocity({opacity: 1}, 250)
-			        //     });
-			        // });
-			    });
+		        $(function() {
+		            var num = _bannerimg.length;
+		            _bannerimg.each(function(i) {
+		                $(this).delay((i++)*100)
+		                .velocity({opacity: 1}, 150)
+		                .animate({filter: "greyscale(0)"}, 300);
+		                // .velocity({opacity: 0.2}, 250)
+		                // .velocity({opacity: 1}, 250)
+		            });
+		        });
 
-			    _portfolioblock.click(function() {
-			    	if($(this).next().hasClass("unfolded")){
-			    		$(this).next().slideUp();
-			    		$(this).next().removeClass("unfolded");
-			    		_bannerimg.addClass("b_w");
-			    	}
-			    	else {
-					    _foldcontent.slideUp(300);
-						_foldcontent.removeClass("unfolded");
-					    $(this).next().addClass("unfolded");
-					    _bannerimg.removeClass("b_w")
-					    $(this).next().slideDown(200, function(){
-					    	var that = $(this);
-					    	$("html, body").animate({
-					    		scrollTop: that.offset().top-150
-					    	},300);
-					    });
-					}
-				    return false;
-  				});
+  				_portfolioblock.click(function() {
+  					var _clickindex = _portfolioblock.index(this);
+  					console.log(_clickindex);
+ 			    	if($(this).next().hasClass("unfolded")){
+ 			    		$(this).next().slideUp();
+ 			    		$(this).next().removeClass("unfolded");
+			    		$(this).find("img.banner-img").addClass("b_w");
+ 			    	}
+ 			    	else {
+ 					    _foldcontent.slideUp(300);
+ 						_foldcontent.removeClass("unfolded");
+ 					    $(this).next().addClass("unfolded");
+					    $(this).find("img.banner-img").removeClass("b_w");
+ 					    $(this).next().slideDown(200, function(){
+ 					    	var that = $(this);
+ 					    	$("html, body").animate({
+ 					    		scrollTop: that.offset().top-150
+ 					    	},300);
+ 					    });
+ 					}
+ 				    return false;
+   				});		
 			    
 				$('.slider').cbpFWSlider();
 
