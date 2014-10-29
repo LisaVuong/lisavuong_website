@@ -7,15 +7,18 @@
         -moz-box-sizing: border-box;
          box-sizing: border-box;
 	}
+
 	.portfolio-grid {
 		max-width: 1000px;
 		margin: 0 auto;
 	}
+
 	.portfolio-grid:before, .portfolio-grid:after {
 	    content: "";
 	    display: table;
 	    clear: both;
 	}
+
 	.portfolio-item {
 		/* Always left aligned, so the grid messes up less.
 		 * float: left; 
@@ -24,17 +27,21 @@
 		 */
 		display: block;
 	}
+
 	.portfolio-item {
 		width: 100%;
 		margin-bottom: 5px;
 		cursor: pointer;
 	}
+
 	.portfolio-item > .item-image {
 		background-color: rgba(0,0,0,0);
 	}
+
 	.portfolio-item > .item-image:hover {
 		opacity: 1;
 	}
+
 	.portfolio-item > .fold-content {
 		font-family: "PT sans", "Georgia", "serif";
 		color: #333;
@@ -58,6 +65,7 @@
 		font-size: 11px;
 		vertical-align: top;
 	}
+
 	.specs > .keyword {
 		text-transform: uppercase;
 		color: #666;
@@ -82,11 +90,13 @@
 		height: auto;
 		background-color: #eee;
 	}
+
 	.slider ul > li:before {
 		padding-top: 56.25%;
 		content: "";
 		display: block;
 	}
+
 	.slider ul > li > * {
 		position: absolute;
 		top: 0;
@@ -96,17 +106,20 @@
 	.fold-content > .description {
 		padding-top: 20px;
 	}
+
 	.intro {
 		padding-top: 0px;
 		text-align: center;
 		margin-bottom: 30px;
 	}
+
 	.intro > a {
 		padding: 0;
 		display: block;
 		padding-bottom: 10px;
 		padding-top: 0;
 	}
+
 	.intro > a.logo {
 		text-decoration: none;
 		color: #212121;
@@ -120,6 +133,7 @@
 		margin-top: 60px;
 		font-size: 3.3em;
 	}
+
 	.intro > a.link {
 		text-decoration: none;
 		font-family: "PT sans", "Georgia", "serif";
@@ -128,15 +142,18 @@
 		font-size: 16px;
 		letter-spacing: 2px;
 	}
+
 	.intro > a.link:hover {
 		color: #f39c12;
 	}
+
 	.intro > .inline-link {
 		display: inline-block;
 		padding-bottom: 0px;
 		padding: 10px;
 		padding-top: 0px; 
 	}
+
 	.h-150 {
 		/*opacity: 0; /* important for the fade-in */ 
 		height: 150px;
@@ -144,7 +161,7 @@
 		border-bottom: 1px solid #fffffa; /* Debugging */
 	}
 
-	.footer{
+	footer{
 		text-align: center;
 		width: 1000px;
 		margin-right: auto;
@@ -154,7 +171,8 @@
 		background-color: #fafafa;
 		margin-top: 20px;
 	}
-	.footer h1{
+
+	footer h1{
 		text-transform: uppercase;
 		font-family: "Pathway Gothic One", "Helvetica", "Arial", "Sans-serif";
 		font-size: 2em;
@@ -162,7 +180,7 @@
 		margin-bottom: -10px;
 	}
 
-	.footer .current p{
+	footer .current p{
 		text-transform: uppercase;
 		font-family: "Pathway Gothic One", "Helvetica", "Arial", "Sans-serif";
 		font-size:1.25em;
@@ -170,7 +188,8 @@
 		padding-left: 10px;
 
 	}
-	.footer a{
+
+	footer a{
 		text-transform: uppercase;
 		text-decoration: none;
 		font-family:"Pathway Gothic One", "Helvetica", "Arial", "Sans-serif";
@@ -179,19 +198,24 @@
 		margin-left: 5px;
 		
 	}
-	.footer img{
+
+	footer img{
 		margin-right: 3px;
 	}
+
 	.foot_links{
 		margin-top:20px;
 		margin-left:10px;
 	}
+
 	.foot_links img{
 		margin-right:5px;
 	}
-	.footer a:hover{
+
+	footer a:hover{
 		color:#f39c12;
 	}
+
 	.reading, .listening, .playing{
 		display: inline-block;
 		margin-bottom: 10px;
@@ -199,44 +223,30 @@
 		padding-top:15px;
 		padding-bottom: 15px;
 	}
+
 	hr{
 		height: 6px;
 		background-color: #282828;
 		border: none;
 		margin-bottom:20px;
 	}
+
 	.first, .second{
 		display: inline-block;
 		padding: 10px;
 		line-height: 30px;
 
 	}
-	#copyright{
+
+	.copyright{
 		margin-bottom: 0px;
 		text-align: center;
 		margin-bottom: -15px;
 		font-size: 12px;
+		font-family: "PT sans", "Georgia", "serif";
 	}
 
-	@media only screen  
-	and (max-width: 600px) {
-		
-		.h-150 {
-			height: 100px;
-			overflow: hidden; 
-		}
-		.h-150 img.banner-img {
-			height: 100%;
-			width: auto;
-		}
-		.specs {
-			width: 32%;
-			font-size: 14px;
-		}
-		.specs-desktop-only {
-			display: none;
-		}
-	}
+	/* Slider Style + Misc */
 
 	.slider {
 		position: relative;
@@ -348,6 +358,7 @@
 		-moz-transition: all 0.2s ease-in-out;
 		transition: all 0.2s ease-in-out;
 	}
+
 	.data-img-hackil-15 {
 		background-image: url('../banners/hackillinois2015_banner.png');
 	}
@@ -355,6 +366,7 @@
 	.data-img-hackil-14 {
 		background-image: url('../banners/hackillinois2014_banner.jpg');
 	}
+
 	.data-img-vmware {
 		background-image: url('../banners/vmware_banner2.png');
 	}
@@ -362,6 +374,7 @@
 	.data-img-spark{
 		background-image: url('../banners/spark_banner.png');
 	}
+
 	.data-img-uber {
 		background-image: url('../banners/uber_banner.png');
 	}
@@ -369,21 +382,27 @@
 	.data-img-zombie {
 		background-image: url('../banners/zombie_banner.jpg');
 	}
+
 	.data-img-notes {
 		background-image: url('../banners/notes_banner.jpg');
 	}
+
 	.data-img-naturalselection {
 		background-image: url('../banners/naturalselection_banner.png');
 	}
+
 	.data-img-games {
 		background-image: url('../banners/games_banner.jpg');
 	}
+
 	.data-img-plastic {
 		background-image: url('../banners/plastic_banner.jpg');
 	}
+
 	.data-img-meadowbrook {
 		background-image: url('../banners/meadowbrook_banner.jpg');
 	}
+
 	.fold-content > .spec-container {
 		width: inherit;
 	}
@@ -396,14 +415,17 @@
 		padding-bottom: 5px;
 		font-weight: bold;
 	}
+
 	.keyword-with-hackillinois > a {
 		width: 40%;
 	}
+
 	.specs > a {
 		display: inline-block;
 		text-decoration: none;
 		color: #666;
 	}
+
 	.specs > a:hover {
 		color: #f39c12;
 	}
@@ -418,21 +440,74 @@
 		transition: 0.5s;
 		-webkit-transition: 0.5s;
 	}
+
 	.b_w:hover{
 		-webkit-filter: grayscale(0);
 		filter: grayscale(0);
 		filter: none;
 	}
+
 	.b_w-inactive {
 		-webkit-filter: grayscale(0);
 		filter: grayscale(0);
 		filter: none;
 	}
+
 	.banner-img {
 		min-width: 100%;
 		max-height: 150px;
 		opacity: 0;
 	}
-	.unfolded img {
 
+	/* Media Queries */
+
+	@media only screen  
+	and (max-width: 600px) {
+		
+		.h-150 {
+			height: 100px;
+			overflow: hidden; 
+		}
+
+		.h-150 img.banner-img {
+			height: 100%;
+			width: auto;
+		}
+
+		.specs {
+			width: 32%;
+			font-size: 14px;
+		}
+
+		.specs-desktop-only {
+			display: none;
+		}
+	}
+
+	@media only screen  
+	and (max-width: 1000px) {
+		
+		footer {
+			width: 100%;
+		}
+
+		footer > .current > .reading,
+		footer > .current > .playing,
+		footer > .current > .listening,
+		footer > .current > .reading > a,
+		footer > .current > .playing > a,
+		footer > .current > .listening > a {
+			display: block;
+			padding-left: 0;
+			padding-top: 0;
+			padding-bottom: 5px;
+		}
+
+		footer > .foot_links > .first,
+		footer > .foot_links > .second {
+			display: block;
+		}
+		footer > .foot_links > .second {
+			padding-top: 0;
+		}
 	}
