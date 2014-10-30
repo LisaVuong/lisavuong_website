@@ -80,9 +80,9 @@
 		width: 100%;
 	}
 
-	.banner { position: relative; overflow: auto; }
-	.banner li { list-style: none; }
-	.banner ul li { float: left; }
+	.tapestry { position: relative; overflow: auto; }
+	.tapestry li { list-style: none; }
+	.tapestry ul li { float: left; }
 
 	.slider ul > li {
 		padding-top: 20px;
@@ -359,54 +359,6 @@
 		transition: all 0.2s ease-in-out;
 	}
 
-	.data-img-hackil-15 {
-		background-image: url('../banners/hackillinois2015_banner.png');
-	}
-
-	.data-img-hackil-14 {
-		background-image: url('../banners/hackillinois2014_banner.jpg');
-	}
-
-	.data-img-vmware {
-		background-image: url('../banners/vmware_banner2.png');
-	}
-
-	.data-img-spark{
-		background-image: url('../banners/spark_banner.png');
-	}
-
-	.data-img-uber {
-		background-image: url('../banners/uber_banner.png');
-	}
-
-	.data-img-zombie {
-		background-image: url('../banners/zombie_banner.jpg');
-	}
-
-	.data-img-notes {
-		background-image: url('../banners/notes_banner.jpg');
-	}
-
-	.data-img-naturalselection {
-		background-image: url('../banners/naturalselection_banner.png');
-	}
-
-	.data-img-games {
-		background-image: url('../banners/games_banner.jpg');
-	}
-
-	.data-img-plastic {
-		background-image: url('../banners/plastic_banner.jpg');
-	}
-
-	.data-img-meadowbrook {
-		background-image: url('../banners/meadowbrook_banner.jpg');
-	}
-
-	.fold-content > .spec-container {
-		width: inherit;
-	}
-
 	.specs > .keyword {
 		text-transform: uppercase;
 		color: #666;
@@ -453,7 +405,7 @@
 		filter: none;
 	}
 
-	.banner-img {
+	.tapestry-img {
 		min-width: 100%;
 		max-height: 150px;
 		opacity: 0;
@@ -469,7 +421,7 @@
 			overflow: hidden; 
 		}
 
-		.h-150 img.banner-img {
+		.h-150 img.tapestry-img {
 			height: 100%;
 			width: auto;
 		}
