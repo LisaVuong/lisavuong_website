@@ -60,9 +60,11 @@ $(document).ready(function(){
 		    $(this).find("img.banner-img").removeClass("b_w");
 			    $(this).next().slideDown(200, function(){
 			    	var that = $(this);
-			    	$("html, body").animate({
-			    		scrollTop: that.offset().top-150
-			    	},300);
+			    	setTimeout(function() {
+			    		$("html, body").animate({
+				    		scrollTop: that.position().top-150
+				    	},300);
+				    }, 100);
 			    });
 			}
 		    return false;
