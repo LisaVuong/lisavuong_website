@@ -87,9 +87,9 @@
 		width: 100%;
 	}
 
-	.banner { position: relative; overflow: auto; }
-	.banner li { list-style: none; }
-	.banner ul li { float: left; }
+	.tapestry { position: relative; overflow: auto; }
+	.tapestry li { list-style: none; }
+	.tapestry ul li { float: left; }
 
 	.slider ul > li {
 		padding-top: 20px;
@@ -367,47 +367,47 @@
 	}
 
 	.data-img-hackil-15 {
-		background-image: url('../banners/hackillinois2015_banner.png');
+		background-image: url('../tapestrys/hackillinois2015_tapestry.png');
 	}
 
 	.data-img-hackil-14 {
-		background-image: url('../banners/hackillinois2014_banner.jpg');
+		background-image: url('../tapestrys/hackillinois2014_tapestry.jpg');
 	}
 
 	.data-img-vmware {
-		background-image: url('../banners/vmware_banner2.png');
+		background-image: url('../tapestrys/vmware_tapestry2.png');
 	}
 
 	.data-img-spark{
-		background-image: url('../banners/spark_banner.png');
+		background-image: url('../tapestrys/spark_tapestry.png');
 	}
 
 	.data-img-uber {
-		background-image: url('../banners/uber_banner.png');
+		background-image: url('../tapestrys/uber_tapestry.png');
 	}
 
 	.data-img-zombie {
-		background-image: url('../banners/zombie_banner.jpg');
+		background-image: url('../tapestrys/zombie_tapestry.jpg');
 	}
 
 	.data-img-notes {
-		background-image: url('../banners/notes_banner.jpg');
+		background-image: url('../tapestrys/notes_tapestry.jpg');
 	}
 
 	.data-img-naturalselection {
-		background-image: url('../banners/naturalselection_banner.png');
+		background-image: url('../tapestrys/naturalselection_tapestry.png');
 	}
 
 	.data-img-games {
-		background-image: url('../banners/games_banner.jpg');
+		background-image: url('../tapestrys/games_tapestry.jpg');
 	}
 
 	.data-img-plastic {
-		background-image: url('../banners/plastic_banner.jpg');
+		background-image: url('../tapestrys/plastic_tapestry.jpg');
 	}
 
 	.data-img-meadowbrook {
-		background-image: url('../banners/meadowbrook_banner.jpg');
+		background-image: url('../tapestrys/meadowbrook_tapestry.jpg');
 	}
 
 	.fold-content > .spec-container {
@@ -460,7 +460,7 @@
 		filter: none;
 	}
 
-	.banner-img {
+	.tapestry-img {
 		min-width: 100%;
 		max-height: 150px;
 		opacity: 0;
@@ -476,7 +476,7 @@
 			overflow: hidden; 
 		}
 
-		.h-150 img.banner-img {
+		.h-150 img.tapestry-img {
 			height: 100%;
 			width: auto;
 		}

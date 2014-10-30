@@ -3,39 +3,39 @@ $(document).ready(function(){
 	var _container 		= $('.container');
 	var _portfolioblock	= $('.item-image');
 	var _foldcontent	= $('.fold-content');
-	var _bannerimg		= $('.banner-img');
+	var _tapestryimg		= $('.tapestry-img');
 
 	//touch support?
 	document.addEventListener("touchstart", function(){}, true)
 	
-	function resizeBanners() {
+	function resizetapestrys() {
 		var _windowwidth 	= $(window).width();
-		var _bannerwidth 	= _bannerimg.width();
+		var _tapestrywidth 	= _tapestryimg.width();
 		var _widthdiff		= 0;
-		if (_windowwidth < _bannerwidth) {
-			_widthdiff = _bannerwidth - _windowwidth;
+		if (_windowwidth < _tapestrywidth) {
+			_widthdiff = _tapestrywidth - _windowwidth;
 			console.log(_widthdiff);
 			_widthdiff = (_widthdiff/2);
 			_widthdiff = 0 - _widthdiff;
-			_bannerimg.css("margin-left", _widthdiff);
+			_tapestryimg.css("margin-left", _widthdiff);
 		}
-		else if(_bannerwidth < _windowwidth) {
-			_bannerimg.css("margin-left", 0);
+		else if(_tapestrywidth < _windowwidth) {
+			_tapestryimg.css("margin-left", 0);
 		}
 		else {
 			console.log("nah");
 		}
 	}
 
-	resizeBanners();
+	resizetapestrys();
 
 	$(window).resize(function() {
-		resizeBanners();
+		resizetapestrys();
 	});
 
     $(function() {
-        var num = _bannerimg.length;
-        _bannerimg.each(function(i) {
+        var num = _tapestryimg.length;
+        _tapestryimg.each(function(i) {
             $(this).delay((i++)*100)
             .velocity({opacity: 1}, 150)
             .animate({filter: "greyscale(0)"}, 300);
@@ -50,14 +50,14 @@ $(document).ready(function(){
 	    	if($(this).next().hasClass("unfolded")){
 	    		$(this).next().slideUp();
 	    		$(this).next().removeClass("unfolded");
-    		$(this).find("img.banner-img").addClass("b_w");
+    		$(this).find("img.tapestry-img").addClass("b_w");
 	    	}
 	    	else {
-	    		$("img.banner-img").addClass("b_w");
+	    		$("img.tapestry-img").addClass("b_w");
 			    _foldcontent.slideUp(300);
 				_foldcontent.removeClass("unfolded");
 			    $(this).next().addClass("unfolded");
-		    $(this).find("img.banner-img").removeClass("b_w");
+		    $(this).find("img.tapestry-img").removeClass("b_w");
 			    $(this).next().slideDown(200, function(){
 			    	var that = $(this);
 			    	setTimeout(function() {
