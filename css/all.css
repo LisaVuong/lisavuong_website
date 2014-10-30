@@ -56,6 +56,13 @@
 		width: inherit;
 	}
 
+	.intro > p{
+		font-size: 12px;
+		color: #333;
+		font-family: "PT sans";
+		width: 300px;
+		margin: 0 auto 10px;
+	}
 	.specs {
 		width: 24%;
 		border-left: 1px solid #999; /*1px solid #999; or 2px solid rgba(243, 156, 18, 0.5) ?*/

@@ -53,6 +53,7 @@ $(document).ready(function(){
     		$(this).find("img.banner-img").addClass("b_w");
 	    	}
 	    	else {
+	    		$("img.banner-img").addClass("b_w");
 			    _foldcontent.slideUp(300);
 				_foldcontent.removeClass("unfolded");
 			    $(this).next().addClass("unfolded");
