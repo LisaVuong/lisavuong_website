@@ -182,7 +182,7 @@
 	footer h1{
 		text-transform: uppercase;
 		font-family: "Pathway Gothic One", "Helvetica", "Arial", "Sans-serif";
-		font-size: 2em;
+		font-size: 1.75em;
 		letter-spacing: 1px;
 		margin-bottom: -10px;
 	}
@@ -493,6 +493,10 @@
 
 	@media only screen  
 	and (max-width: 1000px) {
+
+		.portfolio-grid {
+			width: 100%;
+		}
 		
 		footer {
 			width: 100%;

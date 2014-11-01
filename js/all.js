@@ -36,7 +36,7 @@ $(document).ready(function(){
     $(function() {
         var num = _tapestryimg.length;
         _tapestryimg.each(function(i) {
-            $(this).delay((i++)*100)
+            $(this).delay((i++)*250)
             .velocity({opacity: 1}, 150)
             .animate({filter: "greyscale(0)"}, 300);
             // .velocity({opacity: 0.2}, 250)
