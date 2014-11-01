@@ -484,9 +484,6 @@
 		.specs {
 			width: 32%;
 			font-size: 14px;
-		}
-
-		.specs-desktop-only {
 			display: none;
 		}
 	}
