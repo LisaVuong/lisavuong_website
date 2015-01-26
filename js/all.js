@@ -33,42 +33,81 @@ $(document).ready(function(){
 		resizetapestrys();
 	});
 
-    $(function() {
-        var num = _tapestryimg.length;
-        _tapestryimg.each(function(i) {
-            $(this).delay((i++)*250)
-            .velocity({opacity: 1}, 150)
-            .animate({filter: "greyscale(0)"}, 300);
-            // .velocity({opacity: 0.2}, 250)
-            // .velocity({opacity: 1}, 250)
-        });
-    });
 
-		_portfolioblock.click(function() {
-			var _clickindex = _portfolioblock.index(this);
-			console.log(_clickindex);
-	    	if($(this).next().hasClass("unfolded")){
-	    		$(this).next().slideUp();
-	    		$(this).next().removeClass("unfolded");
-    		$(this).find("img.tapestry-img").addClass("b_w");
-	    	}
-	    	else {
-	    		$("img.tapestry-img").addClass("b_w");
-			    _foldcontent.slideUp(300);
-				_foldcontent.removeClass("unfolded");
-			    $(this).next().addClass("unfolded");
-		    $(this).find("img.tapestry-img").removeClass("b_w");
-			    $(this).next().slideDown(200, function(){
-			    	var that = $(this);
-			    	setTimeout(function() {
-			    		$("html, body").animate({
-				    		scrollTop: that.position().top-150
-				    	},300);
-				    }, 100);
-			    });
-			}
-		    return false;
-		});		
+
+    _portfolioblock.click(function() {
+        var _clickindex = _portfolioblock.index(this);
+        console.log(_clickindex);
+        if($(this).next().hasClass("unfolded")){
+            $(this).next().slideUp();
+            $(this).next().removeClass("unfolded");
+        $(this).find("img.tapestry-img").addClass("b_w");
+        }
+        else {
+            $("img.tapestry-img").addClass("b_w");
+            _foldcontent.slideUp(300);
+            _foldcontent.removeClass("unfolded");
+            $(this).next().addClass("unfolded");
+        $(this).find("img.tapestry-img").removeClass("b_w");
+            $(this).next().slideDown(200, function(){
+                var that = $(this);
+                setTimeout(function() {
+                    $("html, body").animate({
+                        scrollTop: that.position().top-150
+                    },300);
+                }, 100);
+            });
+        }
+        return false;
+    });
     
 	$('.slider').cbpFWSlider();
+
+    animateImages();
 });
+
+function isWebkitBrowser() {
+    return /WebKit/.test(navigator.userAgent);
+}
+
+function animateImages () {
+    var images = $('.tapestry-img');
+
+    var activeIdx = 0;
+    var animateInterval = setInterval(function() {
+        if (activeIdx < images.length) {
+            $(images[activeIdx]).css('opacity', '1');
+        }
+
+        if (activeIdx > 0) {
+            if (isWebkitBrowser()) {
+                $(images[activeIdx - 1]).addClass('b_w');
+            } else {
+                var img = images[activeIdx - 1];
+                var src = $(img).attr('src');
+                $(img).addClass('b_w').after('<img src="' + src + '" class="color_overlay">');
+                $(img).parent().find('img.color_overlay').fadeOut(800);
+            }
+        }
+
+        activeIdx++;
+        if (activeIdx > images.length ) {
+            clearInterval(animateInterval);
+        }
+
+    }, 200);
+
+    return;
+
+    if (!isWebkitBrowser()) {
+        images.each(function(idx) {
+            console.log(this);
+            // This is a hack. Firefox doesn't support grayscale filters, and while you can grayscale
+            // an image with SVG filters, it doesn't support transitioning on those.
+            // Instead we create a second image the same as the first that's colored that we can fade in.
+            var src = $(this).attr('src');
+            $(this).css('opacity', '1').after('<img src="' + src + '" class="color_overlay">');
+        });
+    }
+
+}
