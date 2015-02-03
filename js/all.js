@@ -37,11 +37,10 @@ $(document).ready(function(){
 
     _portfolioblock.click(function() {
         var _clickindex = _portfolioblock.index(this);
-        console.log(_clickindex);
         if($(this).next().hasClass("unfolded")){
             $(this).next().slideUp();
             $(this).next().removeClass("unfolded");
-        $(this).find("img.tapestry-img").addClass("b_w");
+            $(this).find("img.tapestry-img").addClass("b_w");
         }
         else {
             $("img.tapestry-img").addClass("b_w");
@@ -53,7 +52,7 @@ $(document).ready(function(){
                 var that = $(this);
                 setTimeout(function() {
                     $("html, body").animate({
-                        scrollTop: that.position().top-150
+                        scrollTop: that.offset().top-150
                     },300);
                 }, 100);
             });
